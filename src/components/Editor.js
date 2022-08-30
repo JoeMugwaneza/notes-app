@@ -8,7 +8,7 @@ export default function Editor({currentNote, updateNote}){
         tables: true, 
         simplifiedAutoLink: true, 
         strikethrough: true,
-        tasklist: true
+        tasklists: true
     })
 
 
