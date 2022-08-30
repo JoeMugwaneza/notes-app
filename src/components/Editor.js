@@ -1,9 +1,11 @@
 import React from 'react';
 import Showdown, { Converter } from 'showdown';
+import ReactMde from "react-mde";
+import "react-mde/lib/styles/css/react-mde-all.css";
 
 export default function Editor({currentNote, updateNote}){
-    const [selectedTab, setSelectedTap] = React.useState("write")
-
+    const [selectedTab, setSelectedTab] = React.useState("write")
+    
     const converter = new Showdown.Converter({
         tables: true, 
         simplifiedAutoLink: true, 
@@ -18,7 +20,7 @@ export default function Editor({currentNote, updateNote}){
                 value={currentNote.body}
                 onChange={updateNote}
                 selectedTab={selectedTab}
-                onTabChange={setSelectedTap}
+                onTabChange={setSelectedTab}
                 generateMarkDownPreview={(markdown) => 
                     Promise.resolve(converter.makeHtml(markdown))}
                 minEditorHeight={80}
