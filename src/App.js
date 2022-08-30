@@ -22,6 +22,14 @@ function App() {
       setCurrentNoteId(newNote.id)
     }
 
+
+    function updateNote(text){
+      setNotes(oldNotes =>oldNotes.map(oldNote => {
+        return oldNote.id === currentNoteId 
+          ? { ...oldNote, body: text}
+          : oldNote
+      }))
+    }
     function findCurrentNote(){
       return notes.find(note =>{
         return note.id === currentNoteId

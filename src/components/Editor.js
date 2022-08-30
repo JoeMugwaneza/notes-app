@@ -20,7 +20,7 @@ export default function Editor({currentNote, updateNote}){
                 selectedTab={selectedTab}
                 onTabChange={setSelectedTap}
                 generateMarkDownPreview={(markdown) => 
-                    Promise.resolve(Converter.makeHtml(markdown))}
+                    Promise.resolve(converter.makeHtml(markdown))}
                 minEditorHeight={80}
                 heightUnits="vh"
             />
