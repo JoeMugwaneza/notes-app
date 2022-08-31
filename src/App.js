@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import Sidebar from "./components/Sidebar"
 import Editor from './components/Editor'
-import {data} from './data'
+// import {data} from './data'
 import Split from 'react-split';
 import {nanoid} from 'nanoid'
 
@@ -24,7 +24,7 @@ function App() {
 
 
     function updateNote(text){
-      setNotes(oldNotes =>oldNotes.map(oldNote => {
+      setNotes(oldNotes => oldNotes.map(oldNote => {
         return oldNote.id === currentNoteId 
           ? { ...oldNote, body: text}
           : oldNote
