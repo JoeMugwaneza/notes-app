@@ -1,5 +1,5 @@
 import React from 'react';
-import Showdown, { Converter } from 'showdown';
+import Showdown from 'showdown';
 import ReactMde from "react-mde";
 import "react-mde/lib/styles/css/react-mde-all.css";
 
