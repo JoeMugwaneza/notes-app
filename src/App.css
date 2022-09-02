@@ -67,10 +67,6 @@ button:focus{
   height: 100vh;
 }
 
-.sidebar--note {
-
-}
-
 .sidebar--header {
   display: flex;
   justify-content: space-around;
@@ -131,7 +127,7 @@ button:focus{
 
 .text-snippet {
   padding-inline: 5px;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1.2rem;
   color: #4A4E74;
@@ -142,6 +138,7 @@ button:focus{
 
 .selected-note {
   background-color: #4A4E74;
+  display: flex;
 }
 
 .selected-note .text-snippet {
@@ -175,4 +172,13 @@ button:focus{
   justify-content: center;
   align-items: center;
   background-color: whitesmoke;
+}
+
+.note--delete{
+  cursor: pointer;
+  margin: 20px;
+  color: rgb(150, 40, 40);
+  font-weight: 400;
+  background-color: #c4c7db;
+  border-radius: 5px;
 }
