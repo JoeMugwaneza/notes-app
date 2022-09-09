@@ -9,7 +9,7 @@ import {nanoid} from 'nanoid'
 
 function App() {
   const [notes, setNotes] = React.useState(
-    () => JSON.parse(localStorage.getItem('notes')) ||[])
+    () =>JSON.parse(localStorage.getItem('notes')) ||[])
 
   const [currentNoteId, setCurrentNoteId] = React.useState(
     (notes[0] && notes[0].id) || ""
@@ -29,14 +29,32 @@ function App() {
       setCurrentNoteId(newNote.id)
     }
 
-
+    // To bring the edited noted at the top
     function updateNote(text){
-      setNotes(oldNotes => oldNotes.map(oldNote => {
-        return oldNote.id === currentNoteId 
-          ? { ...oldNote, body: text}
-          : oldNote
-      }))
+      setNotes(oldNotes =>{
+        const newArray = []
+
+        for (let i = 0; i < oldNotes.length; i++){
+          const oldNote = oldNotes[i]
+          if(oldNote.id === currentNoteId){
+            newArray.unshift({ ...oldNote, body: text})
+          } else {
+            newArray.push(oldNote)
+          }
+        }
+        return newArray
+      })
     }
+
+    // function updateNote(text){
+    //   setNotes(oldNotes => oldNotes.map(oldNote => {
+    //     return oldNote.id === currentNoteId 
+    //       ? { ...oldNote, body: text}
+    //       : oldNote
+    //   }))
+    // }
+
+
     function findCurrentNote(){
       return notes.find(note =>{
         return note.id === currentNoteId
