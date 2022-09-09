@@ -33,7 +33,6 @@ function App() {
     function updateNote(text){
       setNotes(oldNotes =>{
         const newArray = []
-
         for (let i = 0; i < oldNotes.length; i++){
           const oldNote = oldNotes[i]
           if(oldNote.id === currentNoteId){
@@ -45,15 +44,6 @@ function App() {
         return newArray
       })
     }
-
-    // function updateNote(text){
-    //   setNotes(oldNotes => oldNotes.map(oldNote => {
-    //     return oldNote.id === currentNoteId 
-    //       ? { ...oldNote, body: text}
-    //       : oldNote
-    //   }))
-    // }
-
 
     function findCurrentNote(){
       return notes.find(note =>{
