@@ -193,7 +193,7 @@ button:focus{
   position: relative;
   display: block;
   transform: scale(var(--ggs,1));
-  width: 1opx;
+  width: 10px;
   height: 12px;
   border: 2px solid transparent;
   box-shadow: 
